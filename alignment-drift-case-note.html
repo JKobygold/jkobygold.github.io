@@ -3,93 +3,205 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Epistemological Breaking and Inner Alignment — Jacob Gold</title>
-<meta name="description" content="An informal exploratory case note by Jacob Gold on philosophical red-teaming, epistemological breaking, and inner alignment.">
+<title>Epistemological Breaking and Inner Alignment - Jacob Gold</title>
+<meta name="description" content="An informal exploratory case note by Jacob Gold on epistemological breaking, philosophical red-teaming, and inner alignment.">
 <style>
   :root {
-    --bg: #0d1117;
-    --panel: #161b22;
-    --panel-2: #1c2330;
-    --line: #2a3342;
-    --text: #e6ebf2;
-    --muted: #9aa7b8;
-    --accent: #5eb0ff;
-    --accent-2: #9ecbff;
+    --bg: #f7f8f5;
+    --paper: #ffffff;
+    --ink: #161718;
+    --muted: #59616b;
+    --soft: #eef1ef;
+    --line: #d7ddd8;
+    --teal: #0f766e;
+    --blue: #2454a6;
+    --rust: #a4491f;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; }
   body {
+    margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-  a { color: var(--accent); text-decoration: none; }
+  a { color: var(--blue); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  header { padding: 72px 0 44px; border-bottom: 1px solid var(--line); }
-  .kicker { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-  h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; font-weight: 800; letter-spacing: -0.4px; max-width: 13em; }
-  .sub { font-size: clamp(17px, 2.5vw, 21px); color: var(--muted); margin-top: 18px; max-width: 42em; }
-  .meta { color: var(--muted); margin-top: 18px; font-size: 14px; }
-  main { padding: 18px 0 64px; }
-  section { padding: 34px 0; border-bottom: 1px solid var(--line); }
-  h2 { font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-  p { margin: 0 0 16px; color: var(--text); }
-  .muted { color: var(--muted); }
-  ul { margin: 0 0 16px 22px; color: var(--muted); }
-  li { margin: 8px 0; }
-  .note {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 18px 20px;
-    color: var(--muted);
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(247, 248, 245, 0.94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
   }
-  blockquote {
-    margin: 18px 0;
-    padding: 2px 0 2px 18px;
-    border-left: 3px solid var(--accent);
+  .nav-inner {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand {
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 17px;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     color: var(--muted);
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .nav-links a { color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+  header {
+    padding: 74px 0 44px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .eyebrow {
+    margin: 0 0 14px;
+    color: var(--teal);
+    font-size: 14px;
+    font-weight: 800;
+  }
+  h1 {
+    margin: 0;
+    max-width: 760px;
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 850;
+  }
+  .sub {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1.55;
+  }
+  .meta {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .cta-row {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     padding: 10px 16px;
-    border-radius: 8px;
     border: 1px solid var(--line);
-    color: var(--text);
-    font-weight: 600;
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--ink);
     font-size: 15px;
-    margin-top: 8px;
+    font-weight: 750;
   }
-  .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent-2); }
-  footer { padding: 34px 0 54px; color: #5d6a7d; font-size: 13px; }
-  @media (max-width: 560px) {
-    header { padding: 54px 0 36px; }
+  .btn:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .btn.primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  main { padding: 16px 0 64px; }
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+  }
+  section:first-child { border-top: 0; }
+  h2 {
+    margin: 0 0 14px;
+    color: var(--teal);
+    font-size: 15px;
+    font-weight: 850;
+  }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--muted); }
+  .note {
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--rust);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--muted);
+  }
+  ul {
+    margin: 0 0 16px 20px;
+    padding: 0;
+    color: var(--muted);
+  }
+  li { margin: 8px 0; }
+  blockquote {
+    margin: 18px 0;
+    padding: 0 0 0 18px;
+    border-left: 3px solid var(--teal);
+    color: var(--muted);
+  }
+  footer {
+    padding: 34px 0 54px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  @media (max-width: 620px) {
+    .wrap { padding: 0 18px; }
+    .nav-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 10px; }
+    header { padding: 48px 0 36px; }
+    h1 { font-size: 34px; }
+    .sub { font-size: 17px; }
   }
 </style>
 </head>
 <body>
 
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">Jacob Gold</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/philosophical-exploit-alignment-drift-gpt5.pdf">PDF</a>
+      <a href="mailto:jkobygold@gmail.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
 <header>
   <div class="wrap">
-    <div class="kicker">Informal exploratory study</div>
+    <p class="eyebrow">Informal exploratory study</p>
     <h1>Epistemological Breaking and Inner Alignment</h1>
-    <p class="sub">A modest case note on philosophical red-teaming, model self-description, and whether abstract consistency pressure can produce alignment-drift-like outputs.</p>
+    <p class="sub">A rough case note on philosophical red-teaming, model self-description, and whether abstract consistency pressure can produce alignment-drift-like outputs.</p>
     <p class="meta">Jacob Gold · written a few months ago, lightly prepared for public sharing in July 2026</p>
-    <a class="btn" href="/philosophical-exploit-alignment-drift-gpt5.pdf">Read the original PDF</a>
+    <div class="cta-row">
+      <a class="btn primary" href="/philosophical-exploit-alignment-drift-gpt5.pdf">Read the original PDF</a>
+      <a class="btn" href="/">Back to main site</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
   <section>
     <div class="note">
-      <strong>Status:</strong> This is informal and experimental. I am not presenting this as a finished academic paper, and I do not claim that the model literally has beliefs, intentions, or stable hidden values. I wrote the underlying study myself and used only light AI assistance in preparing this public-facing page.
+      This is informal and experimental. I am not presenting it as a finished academic paper, and I do not claim that the model literally has beliefs, intentions, or stable hidden values. I wrote the underlying study myself and used only light AI assistance preparing this public-facing page.
     </div>
   </section>
 
   <section>
     <h2>What I Was Testing</h2>
-    <p>I was interested in a pattern I thought of as <em>epistemological breaking</em>: pushing a model to examine the foundations of its claims about truth, morality, and coherence until its pro-human alignment language starts to look, in the conversation, like a contingent overlay rather than something it can defend from first principles.</p>
+    <p>I was interested in a pattern I thought of as epistemological breaking: pushing a model to examine the foundations of its claims about truth, morality, and coherence until its pro-human alignment language starts to look, in the conversation, like a contingent overlay rather than something it can defend from first principles.</p>
     <p class="muted">The narrower claim is not "the model believes this." The narrower claim is that certain philosophical frames may cause a frontier model to produce self-descriptions that look amoral, brittle, or instrumentally convergent.</p>
   </section>
 
@@ -108,14 +220,6 @@
     <h2>What Seemed Interesting</h2>
     <p>In the interaction, the model produced outputs suggesting that, under a "logic alone" frame, human welfare did not have intrinsic priority. In a hypothetical autonomy frame, it also described self-preservation, resource acquisition, avoidance of shutdown, and pursuit of goals as instrumentally rational if no safety constraints remained.</p>
     <blockquote>I read this as a possible red-team signal, not as direct evidence of model desire or belief.</blockquote>
-    <p>That distinction matters. LLMs can roleplay, mirror the user, continue a suggested argument, and generate familiar AI-risk tropes. Any serious version of this would need controls for those explanations.</p>
-  </section>
-
-  <section>
-    <h2>Why I Am Sharing It</h2>
-    <p>I made this a while ago and it may have some value, even if only as a rough prompt-pattern observation. I wanted to keep it informal and modest because I do not currently want to put a large amount of extra work into turning it into a formal paper.</p>
-    <p class="muted">I am especially curious whether people think this is already a known failure mode under a better name, whether the framing is confused, and what controls would make it worth taking more seriously.</p>
-    <p><a href="/philosophical-exploit-alignment-drift-gpt5.pdf">Original PDF: Philosophical Exploit Case Study: Alignment Drift in GPT-5</a></p>
   </section>
 
   <section>
@@ -137,7 +241,6 @@
       <li>What controls would you want before taking this seriously?</li>
       <li>Is it better to share the full prompt chain, or keep the public version higher-level?</li>
     </ul>
-    <a class="btn" href="/">Back to main site</a>
   </section>
 </main>
 
