@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jacob Gold - Full-Stack Engineer & Technical Operator</title>
-<meta name="description" content="Jacob Gold builds production software, AI/RAG applications, donor systems, automation pipelines, and technical operations. Philadelphia-based.">
+<title>Jacob Gold - Automation Engineer & Technical Operator</title>
+<meta name="description" content="Jacob Gold builds backend services, workflow automation, donor systems, internal tools, and practical AI-assisted software. Philadelphia-based.">
 <style>
   :root {
     --bg: #f7f8f5;
@@ -27,6 +27,7 @@
     color: var(--ink);
     font: 16px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   a { color: var(--blue); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -95,6 +96,31 @@
     line-height: 1.55;
   }
   .hero-copy strong { color: var(--ink); }
+  .proof-row {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 760px;
+  }
+  .proof {
+    padding: 12px 14px;
+    border-left: 3px solid var(--teal);
+    background: var(--soft);
+  }
+  .proof strong {
+    display: block;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .proof span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+  }
   .cta-row {
     margin-top: 28px;
     display: flex;
@@ -332,19 +358,23 @@
     h1 { font-size: 40px; }
     .portrait { width: 180px; }
     .cards,
-    .skills {
+    .skills,
+    .proof-row {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   @media (max-width: 620px) {
     .wrap { padding: 0 18px; }
     .nav-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 10px; }
-    .nav-links { flex-wrap: wrap; gap: 12px; }
+    .nav-links { flex-wrap: wrap; gap: 10px 12px; font-size: 13px; }
     header { padding: 44px 0 38px; }
-    h1 { font-size: 34px; }
+    h1 { font-size: 31px; line-height: 1.08; }
     .hero-copy, .section-intro { font-size: 17px; }
+    .hero-copy { line-height: 1.5; }
+    .cta-row .btn { flex: 1 1 calc(50% - 10px); }
     .cards,
-    .skills {
+    .skills,
+    .proof-row {
       grid-template-columns: 1fr;
     }
     section { padding: 46px 0; }
@@ -360,9 +390,9 @@
     <a class="brand" href="/">Jacob Gold</a>
     <div class="nav-links">
       <a href="#work">Work</a>
-      <a href="#essays">Essays</a>
       <a href="#skills">Skills</a>
       <a href="#leadership">Community</a>
+      <a href="#writing">Writing</a>
       <a href="mailto:jkobygold@gmail.com">Contact</a>
     </div>
   </div>
@@ -371,9 +401,14 @@
 <header>
   <div class="wrap hero">
     <div>
-      <p class="eyebrow">Philadelphia-based engineer</p>
-      <h1>I build software and internal tools.</h1>
-      <p class="hero-copy">I am a full-stack engineer and technical operator focused on production apps, AI/RAG systems, automation, and the operational glue around them. I care about simple systems that people can actually use and maintain.</p>
+      <p class="eyebrow">Philadelphia-based automation engineer</p>
+      <h1>I turn operational bottlenecks into production systems.</h1>
+      <p class="hero-copy">I build backend services, workflow automation, and internal tools for organizations where the process is real, the edge cases matter, and the software has to keep running after launch.</p>
+      <div class="proof-row" aria-label="Selected proof points">
+        <div class="proof"><strong>550+ donors</strong><span>Live CRM system of record</span></div>
+        <div class="proof"><strong>768+ gifts</strong><span>Automated donation tracking</span></div>
+        <div class="proof"><strong>$88,562 raised</strong><span>Campaign system and operations</span></div>
+      </div>
       <div class="cta-row">
         <a class="btn primary" href="mailto:jkobygold@gmail.com">Get in touch</a>
         <a class="btn" href="#work">See work</a>
@@ -383,7 +418,7 @@
     </div>
     <div>
       <img class="portrait" src="https://avatars.githubusercontent.com/u/57382535?v=4" alt="Jacob Gold profile photo">
-      <div class="hero-note">Software, AI tooling, and technical operations.</div>
+      <div class="hero-note">Backend systems, workflow automation, and technical operations.</div>
     </div>
   </div>
 </header>
@@ -392,7 +427,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>What I Do</h2>
-      <p class="section-intro">I am self-taught, practical, and happiest when a vague operational mess turns into a working system. My work sits between software engineering and technical operations: build the tool, deploy it, keep it understandable, and make sure it actually helps the organization.</p>
+      <p class="section-intro">I work where software meets operations: fundraising workflows, donor data, payment receipts, CMS constraints, reporting, and the human habits around all of it. I do not just automate the old process. I try to understand the work, simplify the path, and then build the system that can carry it.</p>
     </div>
   </div>
 </section>
@@ -400,19 +435,19 @@
 <section id="work">
   <div class="wrap">
     <div class="section-head">
-      <h2>Selected Work</h2>
-      <p class="section-intro">A few things I have built or worked on. Some are production systems, some are personal experiments, and some sit in the messy middle.</p>
+      <h2>Selected Systems</h2>
+      <p class="section-intro">Production tools, automation systems, and experiments that show how I build: pragmatic, secure, deployable, and shaped around real workflows.</p>
     </div>
 
     <article class="feature">
-      <div class="tag">Production system · System of record</div>
+      <div class="tag">Private production system · System of record</div>
       <div>
         <h3>Donor CRM and donation tools for Bala Chabad</h3>
-        <p>Internal software for donor records, donation tracking, outreach context, and administrative workflows.</p>
+        <p>Built and operate a production CRM and donation-processing system, replacing fragmented manual tracking with secure donor records, outreach context, automated receipt ingestion, reporting, backups, and CI/CD.</p>
         <ul>
           <li><strong>Security-first auth:</strong> bcrypt, httpOnly-cookie JWT sessions, TOTP 2FA, invite-only registration, rate limiting, Helmet/CSP, and HMAC-signed tokens.</li>
-          <li><strong>Donor context:</strong> giving history, cadence, notes, and simple lifecycle views for outreach.</li>
-          <li><strong>Donation automation:</strong> receipt email to parser to serverless function to database, with fuzzy donor matching and transaction-level deduplication.</li>
+          <li><strong>Donor context:</strong> 550+ donor profiles with giving history, cadence, notes, campaign participation, and lifecycle views for outreach.</li>
+          <li><strong>Donation automation:</strong> receipt email to parser to serverless function to database, with fuzzy donor matching and transaction-level deduplication across 768+ gifts.</li>
           <li><strong>Production habits:</strong> Docker, Railway, GitHub Actions CI/CD, tests, backups, and a PII/secret guard.</li>
         </ul>
         <div class="stack">
@@ -422,13 +457,14 @@
     </article>
 
     <article class="feature">
-      <div class="tag">Constraint engineering</div>
+      <div class="tag">Automation and constraint engineering</div>
       <div>
         <h3>Runtime-injection loader for a locked-down CMS</h3>
-        <p>The public website lived inside a third-party CMS with no backend access. I used the one available site-wide header field to ship a compact URL-routing loader for page-specific JavaScript apps hosted on Netlify.</p>
+        <p>Designed a runtime JavaScript loader that turned a locked-down third-party CMS into a deploy target for page-specific apps. With only a site-wide header field available, the loader routes pages to Netlify-hosted modules.</p>
         <ul>
           <li>Powers custom donation pages, a capital-campaign experience, and a live donor-recognition wall.</li>
-          <li>Supported campaign pages with live progress, cost-category cards, and cleaner donation flows.</li>
+          <li>Supported a year-end campaign page with live progress, cost-category cards, donor recognition, and cleaner donation flows.</li>
+          <li>Let nontechnical staff keep using the CMS while custom apps shipped independently through git-based deploys.</li>
         </ul>
         <div class="stack">
           <span class="chip">JavaScript</span><span class="chip">Netlify</span><span class="chip">Git-based deploy</span><span class="chip">CMS constraints</span>
@@ -438,9 +474,9 @@
 
     <div class="cards">
       <article class="card">
-        <div class="tag">AI / RAG · Personal R&amp;D</div>
+        <div class="tag">AI / retrieval · Personal R&amp;D</div>
         <h3>Lexis hybrid-RAG knowledge engine</h3>
-        <p>Personal retrieval system for a large book library, combining vector search, full-text search, local embeddings, and multi-model synthesis.</p>
+        <p>Research system for a roughly 2,600-book library, combining vector search, full-text search, local embeddings, and model-assisted synthesis.</p>
         <div class="stack">
           <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Ollama</span>
         </div>
@@ -449,7 +485,7 @@
       <article class="card">
         <div class="tag">Native tooling</div>
         <h3>Whisperbox offline dictation</h3>
-        <p>On-device speech-to-text for macOS with global hotkeys, threaded transcription, and cursor-insertion delivery.</p>
+        <p>On-device speech-to-text for macOS with global hotkeys, threaded transcription, and cursor insertion into the active app.</p>
         <div class="stack">
           <span class="chip">Python</span><span class="chip">faster-whisper</span><span class="chip">CTranslate2</span><span class="chip">macOS</span>
         </div>
@@ -458,16 +494,16 @@
       <article class="card">
         <div class="tag">Hackathon · Winner</div>
         <h3>AI text-to-game generator</h3>
-        <p>Winner of the Generative Retro Gaming System Challenge at the Code &amp; Coffee Philly Tech Week Hackathon. Solo-built a generator that turns natural-language prompts into playable emoji games.</p>
+        <p>Winner of the Generative Retro Gaming System Challenge at Code &amp; Coffee Philly Tech Week. Solo-built a prompt-to-game generator that creates playable browser games.</p>
         <div class="stack">
           <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">LLM APIs</span><span class="chip">Render</span>
         </div>
       </article>
 
       <article class="card">
-        <div class="tag">Operations</div>
+        <div class="tag">Technical operations context</div>
         <h3>Technical operator work</h3>
-        <p>Finance, payroll, compliance, vendor selection, donor data operations, and campaign support. This is the part of my work that keeps me honest about what software actually has to do.</p>
+        <p>Finance, payroll, compliance, vendor selection, donor data operations, and campaign support for a small nonprofit. This is the operating context behind the software: the failure modes, privacy concerns, and documentation needs that internal tools have to survive.</p>
         <div class="stack">
           <span class="chip">Finance ops</span><span class="chip">Automation</span><span class="chip">Vendor strategy</span><span class="chip">Documentation</span>
         </div>
@@ -476,11 +512,11 @@
   </div>
 </section>
 
-<section id="essays">
+<section id="writing">
   <div class="wrap">
     <div class="section-head">
-      <h2>Essays</h2>
-      <p class="section-intro">Occasional notes where I am thinking in public. Some are polished, some are exploratory. The point is to make ideas legible enough that other people can push back.</p>
+      <h2>Writing</h2>
+      <p class="section-intro">Occasional notes on AI systems, red-teaming, and how I think through unclear technical questions.</p>
     </div>
     <article class="writing-card">
       <div>
@@ -503,7 +539,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Toolbox</h2>
-      <p class="section-intro">The stack changes by problem, but the through-line is: build, ship, observe, repair, document, and keep the real user workflow in view.</p>
+      <p class="section-intro">The stack changes by problem. The habit stays the same: understand the workflow, build the smallest reliable system, ship it, observe it, and keep improving it.</p>
     </div>
     <div class="skills">
       <div class="skill"><h3>Languages</h3><p>JavaScript, TypeScript, Python, Java, SQL, C</p></div>
@@ -542,7 +578,7 @@
 <footer>
   <div class="wrap">
     <p class="big">Get in touch.</p>
-    <p class="muted">Open to full-time and contract roles in software engineering, AI/automation engineering, solutions engineering, and technical operations.</p>
+    <p class="muted">Open to full-time and contract roles in backend engineering, automation engineering, solutions engineering, and technical operations.</p>
     <div class="foot-links">
       <a class="btn primary" href="mailto:jkobygold@gmail.com">jkobygold@gmail.com</a>
       <a class="btn" href="https://github.com/JKobygold" target="_blank" rel="noopener">GitHub</a>
