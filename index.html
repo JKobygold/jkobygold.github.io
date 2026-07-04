@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jacob Gold - Full-Stack Engineer & Technical Operator</title>
-<meta name="description" content="Jacob Gold builds and operates production software, AI/RAG applications, donor systems, automation pipelines, and technical operations. Philadelphia-based, remote-ready.">
+<meta name="description" content="Jacob Gold builds production software, AI/RAG applications, donor systems, automation pipelines, and technical operations. Philadelphia-based.">
 <style>
   :root {
     --bg: #f7f8f5;
@@ -141,32 +141,6 @@
     margin-top: 12px;
     color: var(--muted);
     font-size: 13px;
-  }
-
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    padding: 22px 0;
-  }
-  .metric {
-    min-height: 118px;
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--paper);
-  }
-  .metric .num {
-    color: var(--rust);
-    font-size: 27px;
-    line-height: 1.05;
-    font-weight: 850;
-  }
-  .metric .lbl {
-    margin-top: 8px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.45;
   }
 
   section {
@@ -357,7 +331,6 @@
     }
     h1 { font-size: 40px; }
     .portrait { width: 180px; }
-    .metrics,
     .cards,
     .skills {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -370,7 +343,6 @@
     header { padding: 44px 0 38px; }
     h1 { font-size: 34px; }
     .hero-copy, .section-intro { font-size: 17px; }
-    .metrics,
     .cards,
     .skills {
       grid-template-columns: 1fr;
@@ -399,9 +371,9 @@
 <header>
   <div class="wrap hero">
     <div>
-      <p class="eyebrow">Philadelphia-based builder · remote-ready</p>
-      <h1>I build useful software in places where the system has to work.</h1>
-      <p class="hero-copy">I am a full-stack engineer and technical operator focused on production apps, AI/RAG systems, automation, and the operational glue around them. I like owning the whole problem: <strong>code, deployment, data, finance, people, and outcomes.</strong></p>
+      <p class="eyebrow">Philadelphia-based engineer</p>
+      <h1>I build software and internal tools.</h1>
+      <p class="hero-copy">I am a full-stack engineer and technical operator focused on production apps, AI/RAG systems, automation, and the operational glue around them. I care about simple systems that people can actually use and maintain.</p>
       <div class="cta-row">
         <a class="btn primary" href="mailto:jkobygold@gmail.com">Get in touch</a>
         <a class="btn" href="#work">See work</a>
@@ -411,25 +383,16 @@
     </div>
     <div>
       <img class="portrait" src="https://avatars.githubusercontent.com/u/57382535?v=4" alt="Jacob Gold profile photo">
-      <div class="hero-note">Full-stack engineering, AI tooling, technical operations.</div>
+      <div class="hero-note">Software, AI tooling, and technical operations.</div>
     </div>
   </div>
 </header>
-
-<div class="wrap">
-  <div class="metrics" aria-label="Selected metrics">
-    <div class="metric"><div class="num">550+</div><div class="lbl">donors tracked in a CRM I designed, built, and operate as sole engineer</div></div>
-    <div class="metric"><div class="num">$88,562</div><div class="lbl">raised by a year-end campaign experience I designed and shipped</div></div>
-    <div class="metric"><div class="num">55-ish</div><div class="lbl">REST endpoints across auth, donor workflows, analytics, and admin operations</div></div>
-    <div class="metric"><div class="num">2,600</div><div class="lbl">books indexed in a hybrid-RAG knowledge engine built as personal R&amp;D</div></div>
-  </div>
-</div>
 
 <section id="about">
   <div class="wrap">
     <div class="section-head">
       <h2>What I Do</h2>
-      <p class="section-intro">I am self-taught, practical, and happiest when a vague operational mess turns into a working system. At Bala Chabad, I am the whole technology function: software architecture, deployment, security, data, vendor decisions, campaign infrastructure, and day-to-day technical operations.</p>
+      <p class="section-intro">I am self-taught, practical, and happiest when a vague operational mess turns into a working system. My work sits between software engineering and technical operations: build the tool, deploy it, keep it understandable, and make sure it actually helps the organization.</p>
     </div>
   </div>
 </section>
@@ -438,19 +401,19 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Selected Work</h2>
-      <p class="section-intro">A few examples of the shape I like: production software with users, constraints, failure modes, and measurable outcomes.</p>
+      <p class="section-intro">A few things I have built or worked on. Some are production systems, some are personal experiments, and some sit in the messy middle.</p>
     </div>
 
     <article class="feature">
       <div class="tag">Production system · System of record</div>
       <div>
-        <h3>Donor CRM and donation platform for Bala Chabad</h3>
-        <p>Sole architect and engineer of the organization's first donor CRM, now the operating record for <strong>550+ donors and 768+ gifts</strong>.</p>
+        <h3>Donor CRM and donation tools for Bala Chabad</h3>
+        <p>Internal software for donor records, donation tracking, outreach context, and administrative workflows.</p>
         <ul>
           <li><strong>Security-first auth:</strong> bcrypt, httpOnly-cookie JWT sessions, TOTP 2FA, invite-only registration, rate limiting, Helmet/CSP, and HMAC-signed tokens.</li>
-          <li><strong>Explainable donor analytics:</strong> lifetime value, giving cadence, lapse-risk scoring, and lifecycle segmentation recomputed into an outreach dashboard.</li>
-          <li><strong>Donation automation:</strong> receipt email to Apps Script parser to serverless function to live database, with fuzzy donor matching and transaction-level deduplication.</li>
-          <li><strong>Run like production:</strong> Docker, Railway, GitHub Actions CI/CD, tests, backups, and a PII/secret guard.</li>
+          <li><strong>Donor context:</strong> giving history, cadence, notes, and simple lifecycle views for outreach.</li>
+          <li><strong>Donation automation:</strong> receipt email to parser to serverless function to database, with fuzzy donor matching and transaction-level deduplication.</li>
+          <li><strong>Production habits:</strong> Docker, Railway, GitHub Actions CI/CD, tests, backups, and a PII/secret guard.</li>
         </ul>
         <div class="stack">
           <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">SQLite</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Netlify Functions</span>
@@ -462,10 +425,10 @@
       <div class="tag">Constraint engineering</div>
       <div>
         <h3>Runtime-injection loader for a locked-down CMS</h3>
-        <p>The public website lived inside a third-party CMS with no backend access. I used the one available site-wide header field to ship a compact URL-routing loader that injects page-specific JavaScript apps hosted on Netlify.</p>
+        <p>The public website lived inside a third-party CMS with no backend access. I used the one available site-wide header field to ship a compact URL-routing loader for page-specific JavaScript apps hosted on Netlify.</p>
         <ul>
           <li>Powers custom donation pages, a capital-campaign experience, and a live donor-recognition wall.</li>
-          <li>Carried a year-end campaign UI with live progress, cost-category cards, and conversion-focused CTAs that raised <strong>$88,562 against an $80,000 goal</strong>.</li>
+          <li>Supported campaign pages with live progress, cost-category cards, and cleaner donation flows.</li>
         </ul>
         <div class="stack">
           <span class="chip">JavaScript</span><span class="chip">Netlify</span><span class="chip">Git-based deploy</span><span class="chip">CMS constraints</span>
@@ -477,7 +440,7 @@
       <article class="card">
         <div class="tag">AI / RAG · Personal R&amp;D</div>
         <h3>Lexis hybrid-RAG knowledge engine</h3>
-        <p>Retrieval over ~2,600 indexed books, combining FAISS, ChromaDB, SQLite full-text search, local embeddings, multi-model reasoning, and a cost-bounded synthesis pipeline.</p>
+        <p>Personal retrieval system for a large book library, combining vector search, full-text search, local embeddings, and multi-model synthesis.</p>
         <div class="stack">
           <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Ollama</span>
         </div>
@@ -504,7 +467,7 @@
       <article class="card">
         <div class="tag">Operations</div>
         <h3>Technical operator work</h3>
-        <p>Finance, payroll, compliance, vendor selection, donor data operations, and campaign strategy. I build systems with the operating context in the room.</p>
+        <p>Finance, payroll, compliance, vendor selection, donor data operations, and campaign support. This is the part of my work that keeps me honest about what software actually has to do.</p>
         <div class="stack">
           <span class="chip">Finance ops</span><span class="chip">Automation</span><span class="chip">Vendor strategy</span><span class="chip">Documentation</span>
         </div>
@@ -578,8 +541,8 @@
 
 <footer>
   <div class="wrap">
-    <p class="big">Let's build something real.</p>
-    <p class="muted">Open to full-time and contract roles in software engineering, AI/automation engineering, solutions engineering, and technical operations. Philadelphia area or remote in the US.</p>
+    <p class="big">Get in touch.</p>
+    <p class="muted">Open to full-time and contract roles in software engineering, AI/automation engineering, solutions engineering, and technical operations.</p>
     <div class="foot-links">
       <a class="btn primary" href="mailto:jkobygold@gmail.com">jkobygold@gmail.com</a>
       <a class="btn" href="https://github.com/JKobygold" target="_blank" rel="noopener">GitHub</a>
