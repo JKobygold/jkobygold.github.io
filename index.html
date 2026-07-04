@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob Gold — Full-Stack Engineer & Technical Operator</title>
+<meta name="description" content="Jacob Gold builds and operates production software — donor CRM systems, AI/RAG applications, and automation pipelines. Philadelphia-based, remote-ready.">
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-2: #1c2330;
+    --line: #2a3342;
+    --text: #e6ebf2;
+    --muted: #9aa7b8;
+    --accent: #5eb0ff;
+    --accent-2: #9ecbff;
+    --good: #4ade80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Hero */
+  header { padding: 88px 0 56px; border-bottom: 1px solid var(--line); }
+  .kicker { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; font-weight: 800; letter-spacing: -0.5px; }
+  .sub { font-size: clamp(17px, 2.5vw, 21px); color: var(--muted); margin-top: 18px; max-width: 46em; }
+  .sub strong { color: var(--text); font-weight: 600; }
+  .cta-row { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--line); color: var(--text); transition: all .15s;
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent-2); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #0a1420; }
+  .btn.primary:hover { background: var(--accent-2); color: #0a1420; }
+
+  /* Metrics strip */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; padding: 40px 0; }
+  .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .metric .num { font-size: 26px; font-weight: 800; color: var(--accent-2); letter-spacing: -0.5px; }
+  .metric .lbl { font-size: 13.5px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
+
+  /* Sections */
+  section { padding: 52px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 14px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
+  h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
+
+  .lede { font-size: 17.5px; color: var(--muted); max-width: 46em; }
+  .lede strong { color: var(--text); font-weight: 600; }
+  .lede + .lede { margin-top: 14px; }
+
+  /* Project cards */
+  .cards { display: grid; gap: 18px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px;
+  }
+  .card .tag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .card p { color: var(--muted); margin-top: 10px; font-size: 15.5px; }
+  .card p strong { color: var(--text); font-weight: 600; }
+  .card ul { margin: 12px 0 0 18px; color: var(--muted); font-size: 15.5px; }
+  .card li { margin-bottom: 7px; }
+  .card li strong { color: var(--text); font-weight: 600; }
+  .stack { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    font-size: 12.5px; font-weight: 600; color: var(--accent-2); background: var(--panel-2);
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px;
+  }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .skill-group { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .skill-group h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .skill-group div { font-size: 15px; color: var(--text); line-height: 1.7; }
+
+  /* Leadership / about rows */
+  .rows { display: grid; gap: 22px; }
+  .row h3 { margin-bottom: 6px; }
+  .row .when { font-size: 13.5px; color: var(--muted); font-weight: 600; letter-spacing: .3px; }
+  .row p { color: var(--muted); margin-top: 8px; max-width: 52em; }
+  .row p strong { color: var(--text); font-weight: 600; }
+
+  /* Footer */
+  footer { padding: 56px 0 72px; }
+  footer .big { font-size: clamp(24px, 4vw, 34px); font-weight: 800; letter-spacing: -0.4px; }
+  footer .muted { color: var(--muted); margin-top: 10px; }
+  .foot-links { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .fineprint { margin-top: 46px; font-size: 13px; color: #5d6a7d; }
+
+  @media (max-width: 560px) {
+    header { padding: 60px 0 40px; }
+    .card { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Philadelphia · Remote-ready</div>
+    <h1>Jacob Gold</h1>
+    <p class="sub">Full-stack engineer &amp; technical operator. I build production systems end-to-end — <strong>and then I run them</strong>: the code, the operations, the finances, and the strategy around them.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:jkobygold@gmail.com">Get in touch</a>
+      <a class="btn" href="https://github.com/JKobygold" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/jacob-gold-896732197/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="metrics">
+    <div class="metric"><div class="num">550+ donors</div><div class="lbl">tracked in a donor CRM I designed, built, and operate as sole engineer</div></div>
+    <div class="metric"><div class="num">$88,562</div><div class="lbl">raised by a year-end campaign I designed and built — 110% of goal</div></div>
+    <div class="metric"><div class="num">~55 endpoints</div><div class="lbl">production REST API with auth, 2FA, CI/CD, and automated backups</div></div>
+    <div class="metric"><div class="num">~2,600 books</div><div class="lbl">indexed in a hybrid-RAG knowledge engine I build as personal R&amp;D</div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>What I do</h2>
+    <p class="lede">I'm a self-taught engineer who ships software into messy, real-world organizations — the kind with locked-down vendor systems, no engineering team, and no tolerance for downtime. At Bala Chabad I'm the <strong>entire technology function</strong>: I architected the donor CRM that is now the organization's system of record, and I also direct its finance, payroll, compliance, and campaign strategy.</p>
+    <p class="lede">That combination is the point. I translate between business goals and working systems because I own both sides — and I use modern AI tooling to design and ship at a pace a solo engineer otherwise couldn't.</p>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <div class="cards">
+
+      <div class="card">
+        <div class="tag">Production system · System of record</div>
+        <h3>Donor CRM &amp; donation platform — Bala Chabad</h3>
+        <p>Sole architect and engineer of the organization's first donor CRM — now the system of record for <strong>550+ donors and 768+ gifts</strong>.</p>
+        <ul>
+          <li><strong>Security-first auth built from scratch:</strong> bcrypt, httpOnly-cookie JWT sessions, TOTP 2FA, invite-only registration, rate limiting, Helmet/CSP, HMAC-signed tokens.</li>
+          <li><strong>Rule-based, fully explainable donor-analytics engine</strong> — lifetime value, giving cadence, lapse-risk scoring, and lifecycle segmentation, recomputed daily into an outreach dashboard.</li>
+          <li><strong>Eliminated all manual donation entry</strong> with an email-to-database pipeline: payment-receipt email → Apps Script parser → serverless function → live site, with fuzzy donor matching and transaction-level dedup.</li>
+          <li>Deployed with Docker on Railway, GitHub Actions CI/CD, unit tests, and a pre-commit PII/secret guard.</li>
+        </ul>
+        <div class="stack">
+          <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">SQLite</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Netlify Functions</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Constraint engineering</div>
+        <h3>Runtime-injection loader for a locked-down CMS</h3>
+        <p>The org's website runs on a third-party CMS with <strong>no backend access</strong> — the only injection point was a single site-wide header field. I engineered a ~360-character URL-routing module loader that injects page-specific JavaScript apps hosted on Netlify, turning a closed platform into a deploy target.</p>
+        <ul>
+          <li>Powers custom donation pages, a capital-campaign experience, and a live donor-recognition wall.</li>
+          <li>Carried a year-end campaign UI — live progress display, expandable cost-category cards, conversion-focused CTAs — that raised <strong>$88,562 against an $80,000 goal</strong>.</li>
+        </ul>
+        <div class="stack">
+          <span class="chip">JavaScript</span><span class="chip">Netlify</span><span class="chip">Git-based deploy</span><span class="chip">Reverse engineering</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">AI / RAG · Personal R&amp;D</div>
+        <h3>Lexis — hybrid-RAG knowledge engine</h3>
+        <p>A retrieval system over <strong>~2,600 indexed books</strong> (17 GB vector index) combining FAISS, ChromaDB, and SQLite full-text search — local embeddings, multi-model reasoning, an agentic retrieval loop, and a cost-bounded synthesis pipeline that escalates across Claude model tiers only when needed.</p>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Ollama</span><span class="chip">Claude API</span><span class="chip">Multi-agent</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Native tooling</div>
+        <h3>Whisperbox — offline dictation for macOS</h3>
+        <p>On-device speech-to-text with global hotkeys, threaded transcription, and cursor-insertion delivery — fully offline, packaged as a native macOS app.</p>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">faster-whisper</span><span class="chip">CTranslate2</span><span class="chip">macOS</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Hackathon · Winner</div>
+        <h3>AI text-to-game generator — Philly Tech Week 2025</h3>
+        <p><strong>Winner, Generative Retro Gaming System Challenge</strong> (Code &amp; Coffee Philly Tech Week Hackathon) — solo-built an AI generator that turns natural-language prompts into playable emoji games.</p>
+        <div class="stack">
+          <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">LLM APIs</span><span class="chip">Render</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Toolbox</h2>
+    <div class="skills">
+      <div class="skill-group"><h4>Languages</h4><div>JavaScript · TypeScript · Python · Java · SQL · C</div></div>
+      <div class="skill-group"><h4>Web &amp; APIs</h4><div>React · Node.js · Express · FastAPI · REST · webhooks · serverless · PWAs</div></div>
+      <div class="skill-group"><h4>AI / LLM</h4><div>RAG · embeddings · FAISS · ChromaDB · multi-agent systems · tool use · Claude · OpenAI · Ollama · Whisper</div></div>
+      <div class="skill-group"><h4>Data</h4><div>PostgreSQL · MySQL · MongoDB · SQLite · ETL pipelines · pandas · dashboards</div></div>
+      <div class="skill-group"><h4>Security</h4><div>JWT · TOTP 2FA · bcrypt · rate limiting · CSP/Helmet · HMAC · PII/secret scanning</div></div>
+      <div class="skill-group"><h4>Ship &amp; run</h4><div>Git · GitHub Actions CI/CD · Docker · Netlify · Railway · testing · monitoring · documentation</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <h2>Leadership &amp; community</h2>
+    <div class="rows">
+      <div class="row">
+        <h3>Chief Operating Officer (volunteer) — Code &amp; Coffee Philadelphia</h3>
+        <div class="when">One of Philadelphia's largest tech meetups · ~4,500 members</div>
+        <p>Operations lead for the community — weekly build sessions, hackathons, and AI reading groups. Led its formal incorporation as a 501(c)(3) and advise on finance, branding, and organizational strategy.</p>
+      </div>
+      <div class="row">
+        <h3>Administrative Director &amp; Technical Lead — Bala Chabad</h3>
+        <div class="when">Jan 2024 – Present · Bala Cynwyd, PA</div>
+        <p>Beyond the engineering above: run accounting, payroll, and compliance; evaluate and select software vendors; advise leadership on budgeting and campaign strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Let's build something real.</div>
+    <p class="muted">Open to full-time and contract roles — solutions engineering, AI/automation engineering, full-stack development, and technical operations. Philadelphia area or remote (US).</p>
+    <div class="foot-links">
+      <a class="btn primary" href="mailto:jkobygold@gmail.com">jkobygold@gmail.com</a>
+      <a class="btn" href="https://github.com/JKobygold" target="_blank" rel="noopener">github.com/JKobygold</a>
+      <a class="btn" href="https://www.linkedin.com/in/jacob-gold-896732197/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="fineprint">© 2026 Jacob Gold · Built by hand, shipped from Philadelphia.</div>
+  </div>
+</footer>
+
+</body>
+</html>
