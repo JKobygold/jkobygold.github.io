@@ -289,6 +289,39 @@
     font-size: 15px;
   }
 
+  .shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 14px;
+  }
+  .shelf a {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--soft);
+    line-height: 0;
+    transition: transform 0.13s ease, border-color 0.13s ease, box-shadow 0.13s ease;
+  }
+  .shelf a:hover {
+    transform: translateY(-3px);
+    border-color: var(--teal);
+    box-shadow: 0 6px 16px rgba(22, 23, 24, 0.12);
+    text-decoration: none;
+  }
+  .shelf img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+  .shelf-note {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
   .writing-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 190px;
@@ -393,6 +426,7 @@
       <a href="#skills">Skills</a>
       <a href="#leadership">Community</a>
       <a href="#writing">Writing</a>
+      <a href="#reading">Reading</a>
       <a href="mailto:jkobygold@gmail.com">Contact</a>
     </div>
   </div>
@@ -644,6 +678,44 @@
         <p>Run accounting, payroll, compliance, donor systems, technical planning, and campaign infrastructure. It is a small organization, which means the systems have to be pragmatic, legible, and durable.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="reading">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Bookshelf</h2>
+      <p class="section-intro">A lot of the way I think about systems, institutions, and minds comes from reading widely - political economy, cognitive science, and the occasional novel. Recently read, pulled live from <a href="https://www.goodreads.com/user/show/13717595-jake" target="_blank" rel="noopener">my Goodreads</a>.</p>
+    </div>
+    <div class="shelf">
+      <!-- GOODREADS-START -->
+      <a href="https://www.goodreads.com/book/show/195205359" target="_blank" rel="noopener" title="The Ecological Brain (Resources for Ecological Psychology Series)"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696923733l/195205359._SX318_.jpg" loading="lazy" alt="The Ecological Brain (Resources for Ecological Psychology Series)"></a>
+      <a href="https://www.goodreads.com/book/show/274827" target="_blank" rel="noopener" title="The Technological Society"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439288270l/274827.jpg" loading="lazy" alt="The Technological Society"></a>
+      <a href="https://www.goodreads.com/book/show/45862737" target="_blank" rel="noopener" title="The Brain from Inside Out"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1558065406l/45862737._SY475_.jpg" loading="lazy" alt="The Brain from Inside Out"></a>
+      <a href="https://www.goodreads.com/book/show/145391" target="_blank" rel="noopener" title="I Hate You—Don't Leave Me: Understanding the Borderline Personality"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347849174l/145391.jpg" loading="lazy" alt="I Hate You—Don't Leave Me: Understanding the Borderline Personality"></a>
+      <a href="https://www.goodreads.com/book/show/42872332" target="_blank" rel="noopener" title="Brains as Engines of Association: An Operating Principle for Nervous Systems"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577248040l/42872332.jpg" loading="lazy" alt="Brains as Engines of Association: An Operating Principle for Nervous Systems"></a>
+      <a href="https://www.goodreads.com/book/show/455893" target="_blank" rel="noopener" title="Coercion, Capital, and European States, A.D. 990-1992"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348039621l/455893.jpg" loading="lazy" alt="Coercion, Capital, and European States, A.D. 990-1992"></a>
+      <a href="https://www.goodreads.com/book/show/60331414" target="_blank" rel="noopener" title="Procrastination: What It Is, Why It's a Problem, and What You Can Do About It (APA LifeTools Series)"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651646812l/60331414.jpg" loading="lazy" alt="Procrastination: What It Is, Why It's a Problem, and What You Can Do About It (APA LifeTools Series)"></a>
+      <a href="https://www.goodreads.com/book/show/25744928" target="_blank" rel="noopener" title="Deep Work: Rules for Focused Success in a Distracted World"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1447957962l/25744928._SY475_.jpg" loading="lazy" alt="Deep Work: Rules for Focused Success in a Distracted World"></a>
+      <a href="https://www.goodreads.com/book/show/39322175" target="_blank" rel="noopener" title="Finish What You Start: The Art of Following Through, Taking Action, Executing, &amp; Self-Discipline"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521468340l/39322175._SX318_.jpg" loading="lazy" alt="Finish What You Start: The Art of Following Through, Taking Action, Executing, &amp; Self-Discipline"></a>
+      <a href="https://www.goodreads.com/book/show/122765395" target="_blank" rel="noopener" title="Elon Musk"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1692288251l/122765395._SY475_.jpg" loading="lazy" alt="Elon Musk"></a>
+      <a href="https://www.goodreads.com/book/show/56783258" target="_blank" rel="noopener" title="Cloud Cuckoo Land"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1618589128l/56783258._SY475_.jpg" loading="lazy" alt="Cloud Cuckoo Land"></a>
+      <a href="https://www.goodreads.com/book/show/12617" target="_blank" rel="noopener" title="Manufacturing Consent: The Political Economy of the Mass Media"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525166345l/12617._SY475_.jpg" loading="lazy" alt="Manufacturing Consent: The Political Economy of the Mass Media"></a>
+      <a href="https://www.goodreads.com/book/show/54493401" target="_blank" rel="noopener" title="Project Hail Mary"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401._SY475_.jpg" loading="lazy" alt="Project Hail Mary"></a>
+      <a href="https://www.goodreads.com/book/show/762476" target="_blank" rel="noopener" title="Kokoro"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327991553l/762476.jpg" loading="lazy" alt="Kokoro"></a>
+      <a href="https://www.goodreads.com/book/show/3636" target="_blank" rel="noopener" title="The Giver (Giver, #1)"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342493368l/3636.jpg" loading="lazy" alt="The Giver (Giver, #1)"></a>
+      <a href="https://www.goodreads.com/book/show/54670266" target="_blank" rel="noopener" title="Can't Stop Thinking: How to Let Go of Anxiety and Free Yourself from Obsessive Rumination"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613830871l/54670266.jpg" loading="lazy" alt="Can't Stop Thinking: How to Let Go of Anxiety and Free Yourself from Obsessive Rumination"></a>
+      <a href="https://www.goodreads.com/book/show/62559800" target="_blank" rel="noopener" title="Just in Time: Temporality, Aesthetic Experience, and Cognitive Neuroscience"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684791984l/62559800.jpg" loading="lazy" alt="Just in Time: Temporality, Aesthetic Experience, and Cognitive Neuroscience"></a>
+      <a href="https://www.goodreads.com/book/show/17865072" target="_blank" rel="noopener" title="Imagined Communities: Komunitas-Komunitas Terbayang"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1464871716l/17865072._SY475_.jpg" loading="lazy" alt="Imagined Communities: Komunitas-Komunitas Terbayang"></a>
+      <a href="https://www.goodreads.com/book/show/80571" target="_blank" rel="noopener" title="American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686079247l/80571.jpg" loading="lazy" alt="American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer"></a>
+      <a href="https://www.goodreads.com/book/show/40755279" target="_blank" rel="noopener" title="Intuition, Creativity, Innovation (Innovation, Entrepreneurship and Management)"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1541435181l/40755279.jpg" loading="lazy" alt="Intuition, Creativity, Innovation (Innovation, Entrepreneurship and Management)"></a>
+      <a href="https://www.goodreads.com/book/show/194746" target="_blank" rel="noopener" title="No Longer Human"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422638843l/194746.jpg" loading="lazy" alt="No Longer Human"></a>
+      <a href="https://www.goodreads.com/book/show/5969899" target="_blank" rel="noopener" title="A History of Experimental Psychology."><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1481383251l/5969899._SX318_.jpg" loading="lazy" alt="A History of Experimental Psychology."></a>
+      <a href="https://www.goodreads.com/book/show/53232144" target="_blank" rel="noopener" title="On Task: How Our Brain Gets Things Done"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1604992048l/53232144.jpg" loading="lazy" alt="On Task: How Our Brain Gets Things Done"></a>
+      <a href="https://www.goodreads.com/book/show/40644668" target="_blank" rel="noopener" title="When Pleasing You Is Killing Me"><img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529963806l/40644668._SY475_.jpg" loading="lazy" alt="When Pleasing You Is Killing Me"></a>
+      <!-- GOODREADS-END -->
+    </div>
+    <p class="shelf-note"><a href="https://www.goodreads.com/user/show/13717595-jake" target="_blank" rel="noopener">See the full shelf on Goodreads →</a></p>
   </div>
 </section>
 
